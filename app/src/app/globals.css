@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --color-marca-50: #eff8fd;
+  --color-marca-100: #d8eefa;
+  --color-marca-300: #7ec8e8;
+  --color-marca-500: #0485c4;
+  --color-marca-600: #0271ab;
+  --color-marca-700: #22509d;
+  --color-marca-800: #16407e;
+  --color-marca-900: #0f2f5c;
+  /* Los tonos 400 y 500 son decorativos; 600 y 700 cumplen contraste AA sobre blanco. */
+  --color-lima-400: #b4dd3c;
+  --color-lima-500: #93c01f;
+  --color-lima-600: #5c7a13;
+  --color-lima-700: #47600d;
+  --color-carbon-500: #6b7280;
+  --color-carbon-700: #3f4653;
+  --color-carbon-900: #33373d;
+}
+
+body {
+  background-color: #f4f6f9;
+  color: var(--color-carbon-900);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Paneles con cabecera azul sólida, como el catálogo actual de Impocali. */
+.panel {
+  border: 1px solid var(--color-marca-100);
+  background: #ffffff;
+}
+
+.panel-cabecera {
+  background: var(--color-marca-700);
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* Filas de segmento: fondo gris muy claro y texto en mayúsculas. */
+.fila-segmento {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 1px solid #e8ecf1;
+  background: #f5f7fa;
+  padding: 0.625rem 0.875rem;
+  text-align: left;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-carbon-700);
+  transition: background-color 0.15s, border-color 0.15s;
+}
+
+.fila-segmento:hover {
+  background: var(--color-marca-50);
+  border-color: var(--color-marca-300);
+}
+
+.fila-segmento[data-abierto="true"] {
+  background: var(--color-marca-700);
+  border-color: var(--color-marca-700);
+  color: #ffffff;
+}
+
+@keyframes pulso {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.55; transform: scale(1.35); }
+}
+
+.pulso {
+  animation: pulso 1.6s ease-in-out infinite;
+}
+
+@keyframes entrar {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.entrar {
+  animation: entrar 0.35s ease-out both;
+}
