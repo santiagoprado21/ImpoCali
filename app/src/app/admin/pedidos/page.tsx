@@ -69,7 +69,45 @@ export default function ListadoPedidos() {
       </div>
 
       <div className="mt-5 overflow-hidden rounded-md border border-marca-100 bg-white shadow-sm">
-        <div className="overflow-x-auto">
+        {/* En celular la tabla de 7 columnas no cabe: se muestra como lista. */}
+        <ul className="divide-y divide-marca-100/70 md:hidden">
+          {visibles.map((p) => (
+            <li key={p.numero}>
+              <Link
+                href={`/admin/pedidos/${p.numero}`}
+                className="block p-4 transition hover:bg-marca-50/40"
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <span className="text-xs font-semibold text-marca-600">
+                    {p.numero}
+                  </span>
+                  <EtiquetaEstado estado={p.estado} />
+                </div>
+                <p className="mt-1.5 text-sm font-medium text-carbon-900">
+                  {p.cliente}
+                </p>
+                <p className="text-xs text-carbon-500">{p.ciudad}</p>
+                <p className="mt-1 line-clamp-2 text-xs text-carbon-700">
+                  {descripcionPedido(p)}
+                </p>
+                <div className="mt-2 flex items-center justify-between gap-3">
+                  <span className="text-xs text-carbon-500">
+                    {new Date(p.creado).toLocaleDateString("es-CO", {
+                      day: "2-digit",
+                      month: "short",
+                    })}{" "}
+                    · {ETIQUETA_CANAL[p.canal]}
+                  </span>
+                  <span className="text-sm font-semibold text-carbon-900">
+                    {formatoCOP(totalConIva(p))}
+                  </span>
+                </div>
+              </Link>
+            </li>
+          ))}
+        </ul>
+
+        <div className="hidden overflow-x-auto md:block">
           <table className="w-full text-left text-sm">
             <thead className="bg-marca-50/70 text-xs uppercase tracking-wide text-carbon-500">
               <tr>
