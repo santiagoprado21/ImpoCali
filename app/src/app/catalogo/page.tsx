@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import { FotoPieza } from "@/components/FotoPieza";
 import { FotoVehiculo } from "@/components/FotoVehiculo";
+import { SelectorMarca } from "@/components/SelectorMarca";
 import {
   aniosDeModelo,
   esUniversal,
@@ -123,20 +124,15 @@ export default function Catalogo() {
       </div>
 
       <div className="grid gap-3 sm:grid-cols-3">
-        <Paso numero={1} titulo={tipo === "Motos" ? "Marca de la moto" : "Marca del vehículo"}>
-          <select
-            aria-label="Marca"
-            value={marca}
-            onChange={(e) => cambiarMarca(e.target.value)}
-            className="w-full appearance-none bg-white px-3 py-2.5 text-sm font-medium text-carbon-900 outline-none focus:ring-2 focus:ring-marca-100"
-          >
-            <option value="">Seleccione una marca…</option>
-            {marcas.map((m) => (
-              <option key={m} value={m}>
-                {m}
-              </option>
-            ))}
-          </select>
+        <Paso
+          numero={1}
+          titulo={tipo === "Motos" ? "Marca de la moto" : "Marca del vehículo"}
+        >
+          <SelectorMarca
+            marcas={marcas}
+            valor={marca}
+            onChange={cambiarMarca}
+          />
         </Paso>
 
         <Paso numero={2} titulo="Modelo o línea" deshabilitado={!marca}>

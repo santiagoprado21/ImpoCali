@@ -1057,6 +1057,16 @@ export function imagenDeModelo(marca: string, linea: string): string {
   return `/vehiculos/${carroceria}.jpg`;
 }
 
+/** Logo de la marca del vehículo en el selector del catálogo. */
+export function imagenDeMarca(marca: string): string {
+  const slug = marca
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/\p{M}/gu, "")
+    .replace(/\s+/g, "-");
+  return `/marcas/${slug}.png`;
+}
+
 export function stockTotal(pieza: Pieza): number {
   return pieza.existencias.reduce((total, e) => total + e.unidades, 0);
 }
