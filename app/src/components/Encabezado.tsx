@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -61,19 +62,16 @@ export function Encabezado() {
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3 px-5 py-2.5">
           <Link
             href={interno ? "/admin" : "/"}
-            className="flex items-center gap-3"
+            className="flex shrink-0 items-center"
           >
-            <span className="grid h-10 w-10 place-items-center rounded-sm bg-marca-700 text-sm font-bold text-white">
-              AF
-            </span>
-            <span className="leading-tight">
-              <span className="block text-lg font-bold tracking-tight text-marca-700">
-                Autofix
-              </span>
-              <span className="block text-[10px] uppercase tracking-[0.12em] text-carbon-500">
-                {interno ? "Impocali · Consola interna" : "Impocali · Repuestos"}
-              </span>
-            </span>
+            <Image
+              src="/marca/logo-color.png"
+              alt="Autofix · Tienda de repuestos multimarca"
+              width={200}
+              height={56}
+              priority
+              className="h-10 w-auto sm:h-11"
+            />
           </Link>
 
           <nav className="order-last flex w-full gap-1 overflow-x-auto sm:order-none sm:w-auto">

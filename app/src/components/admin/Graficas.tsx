@@ -110,7 +110,7 @@ export function BarrasHorizontales({
   );
 }
 
-const COLORES_CANAL = ["#0485c4", "#22509d", "#93c01f", "#f0a202"];
+const COLORES_CANAL = ["#004693", "#00356e", "#668fbf", "#93c01f"];
 
 export function Rosquilla({
   segmentos,

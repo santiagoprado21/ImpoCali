@@ -1,22 +1,36 @@
 import type { Metadata } from "next";
+import { Bebas_Neue, Raleway } from "next/font/google";
 import { BotonWhatsApp } from "@/components/BotonWhatsApp";
 import { Encabezado } from "@/components/Encabezado";
 import { ProveedorSesion } from "@/lib/sesion";
 import { ProveedorTienda } from "@/lib/tienda";
 import "./globals.css";
 
+const raleway = Raleway({
+  subsets: ["latin"],
+  variable: "--font-raleway",
+  display: "swap",
+});
+
+const bebas = Bebas_Neue({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-bebas",
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Autofix · Buscador inteligente de repuestos | Impocali",
+  title: "Autofix · Tienda de repuestos multimarca | Impocali",
   description:
-    "Mockup del buscador inteligente de repuestos para Impocali: catálogo por vehículo, identificación de la pieza, stock y precio en línea, carrito, pedido inmediato y consola de administración.",
+    "Buscador inteligente de repuestos Autofix para Impocali: catálogo por vehículo, identificación de la pieza, stock y precio en línea, carrito y consola de administración.",
 };
 
 export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="es-CO">
-      <body>
+    <html lang="es-CO" className={`${raleway.variable} ${bebas.variable}`}>
+      <body className="font-sans">
         <ProveedorSesion>
           <ProveedorTienda>
             <Encabezado />

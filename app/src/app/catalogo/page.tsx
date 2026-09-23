@@ -380,7 +380,7 @@ function Paso({
 }) {
   return (
     <div className={deshabilitado ? "opacity-70" : undefined}>
-      <p className="flex items-center justify-between gap-2 bg-marca-700 px-3 py-1.5 text-xs font-semibold text-white">
+      <p className="flex items-center justify-between gap-2 bg-marca-500 px-3 py-1.5 text-xs font-semibold text-white">
         <span>
           {numero}. {titulo}
         </span>

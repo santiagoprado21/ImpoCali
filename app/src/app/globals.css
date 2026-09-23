@@ -1,15 +1,16 @@
 @import "tailwindcss";
 
 @theme {
-  --color-marca-50: #eff8fd;
-  --color-marca-100: #d8eefa;
-  --color-marca-300: #7ec8e8;
-  --color-marca-500: #0485c4;
-  --color-marca-600: #0271ab;
-  --color-marca-700: #22509d;
-  --color-marca-800: #16407e;
-  --color-marca-900: #0f2f5c;
-  /* Los tonos 400 y 500 son decorativos; 600 y 700 cumplen contraste AA sobre blanco. */
+  /* Pantone Reflex Blue #004693 — manual de marca Autofix */
+  --color-marca-50: #e8eef7;
+  --color-marca-100: #c5d4e9;
+  --color-marca-300: #668fbf;
+  --color-marca-500: #004693;
+  --color-marca-600: #003d80;
+  --color-marca-700: #00356e;
+  --color-marca-800: #002a57;
+  --color-marca-900: #001f40;
+  /* Acento de estado / éxito (se mantiene; no forma parte del manual). */
   --color-lima-400: #b4dd3c;
   --color-lima-500: #93c01f;
   --color-lima-600: #5c7a13;
@@ -17,13 +18,24 @@
   --color-carbon-500: #6b7280;
   --color-carbon-700: #3f4653;
   --color-carbon-900: #33373d;
+  --font-sans: var(--font-raleway), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-bebas), ui-sans-serif, system-ui, sans-serif;
 }
 
 body {
   background-color: #f4f6f9;
   color: var(--color-carbon-900);
-  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+.titulo-marca {
+  font-family: var(--font-display);
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  text-transform: uppercase;
 }
 
 /* Paneles con cabecera azul sólida, como el catálogo actual de Impocali. */
@@ -33,7 +45,7 @@ body {
 }
 
 .panel-cabecera {
-  background: var(--color-marca-700);
+  background: var(--color-marca-500);
   color: #ffffff;
   padding: 0.5rem 1rem;
   text-align: center;
@@ -67,8 +79,8 @@ body {
 }
 
 .fila-segmento[data-abierto="true"] {
-  background: var(--color-marca-700);
-  border-color: var(--color-marca-700);
+  background: var(--color-marca-500);
+  border-color: var(--color-marca-500);
   color: #ffffff;
 }
 
