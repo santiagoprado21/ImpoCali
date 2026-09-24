@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BadgeStock } from "@/components/BadgeStock";
 import { CATALOGO, stockTotal } from "@/lib/catalogo";
 import { formatoCOP } from "@/lib/pedidos";
 import { FotoPieza } from "@/components/FotoPieza";
@@ -75,13 +76,7 @@ export function PiezasDestacadas() {
                     <p className="text-base font-semibold text-marca-700">
                       {formatoCOP(pieza.precioSocio)}
                     </p>
-                    <p
-                      className={`text-[11px] font-medium ${
-                        stock > 20 ? "text-lima-600" : "text-amber-700"
-                      }`}
-                    >
-                      {stock} und.
-                    </p>
+                    <BadgeStock unidades={stock} compacto />
                   </div>
                 </div>
               </Link>

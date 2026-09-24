@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { ESTADOS, EtiquetaEstado } from "@/components/admin/EstadoPedido";
+import { TarjetaCliente } from "@/components/admin/TarjetaCliente";
 import { FotoPieza } from "@/components/FotoPieza";
 import { LineaTiempo } from "@/components/LineaTiempo";
 import { piezaPorId } from "@/lib/catalogo";
@@ -58,8 +59,10 @@ export default function DetallePedido() {
                   </h1>
                   <EtiquetaEstado estado={pedido.estado} />
                 </div>
-                <p className="mt-1 text-sm text-carbon-500">
-                  {pedido.cliente} · {pedido.ciudad} ·{" "}
+                <p className="mt-1 text-sm font-semibold text-carbon-900">
+                  Pedido de{" "}
+                  <span className="text-lima-700">{pedido.cliente}</span> ·{" "}
+                  {pedido.ciudad} ·{" "}
                   {creado.toLocaleDateString("es-CO", {
                     day: "numeric",
                     month: "long",
@@ -130,11 +133,15 @@ export default function DetallePedido() {
         </div>
 
         <aside className="space-y-5 lg:sticky lg:top-24 lg:self-start">
+          <TarjetaCliente nombre={pedido.cliente} ciudad={pedido.ciudad} />
+
           <section className="rounded-md border border-marca-100 bg-white p-5 shadow-sm">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-carbon-700">
               Datos del caso
             </h2>
             <dl className="mt-4 space-y-3 text-xs">
+              <Dato clave="Cliente" valor={pedido.cliente} />
+              <Dato clave="Ciudad" valor={pedido.ciudad} />
               <Dato clave="Contenido" valor={descripcionPedido(pedido)} />
               <Dato clave="Origen de la búsqueda" valor={ETIQUETA_CANAL[pedido.canal]} />
               <Dato

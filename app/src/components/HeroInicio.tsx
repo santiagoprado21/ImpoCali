@@ -38,13 +38,13 @@ export function HeroInicio() {
         <div className="entrar mt-7 flex flex-wrap gap-3 [animation-delay:200ms]">
           <a
             href="#buscador"
-            className="inline-flex items-center bg-white px-5 py-3 text-sm font-semibold text-marca-700 transition hover:bg-marca-50"
+            className="inline-flex items-center bg-lima-500 px-5 py-3 text-sm font-bold text-marca-900 transition hover:bg-lima-400"
           >
-            Buscar repuesto
+            Buscar con IA
           </a>
           <Link
             href="/catalogo"
-            className="inline-flex items-center border border-white/50 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+            className="inline-flex items-center border border-lima-400/80 px-5 py-3 text-sm font-semibold text-white transition hover:bg-lima-500/20"
           >
             Catálogo por vehículo
           </Link>

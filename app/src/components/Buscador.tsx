@@ -11,6 +11,7 @@ import { stockTotal } from "@/lib/catalogo";
 import { formatoCOP } from "@/lib/pedidos";
 import type { Candidato } from "@/lib/types";
 import { BarraConfianza, ChipConfianza } from "./Confianza";
+import { BadgeStock } from "./BadgeStock";
 import { FotoPieza } from "./FotoPieza";
 
 type Modo = "descripcion" | "codigo" | "imagen";
@@ -224,7 +225,7 @@ export function Buscador() {
               <button
                 type="submit"
                 disabled={!consulta.trim() || analizando}
-                className="inline-flex items-center justify-center gap-2 bg-marca-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-marca-600 disabled:cursor-not-allowed disabled:bg-carbon-500/30"
+                className="inline-flex items-center justify-center gap-2 bg-lima-500 px-6 py-3 text-sm font-bold text-marca-900 transition hover:bg-lima-400 disabled:cursor-not-allowed disabled:bg-carbon-500/30"
               >
                 <IconoIA className="h-4 w-4" />
                 {analizando ? "Analizando…" : "Buscar con IA"}
@@ -390,19 +391,11 @@ export function Buscador() {
                             {formatoCOP(pieza.precioSocio)}
                           </p>
                           <p className="text-xs text-carbon-500">precio socio</p>
-                          <p
-                            className={`mt-3 text-xs font-medium ${
-                              stockTotal(pieza) > 20
-                                ? "text-lima-600"
-                                : "text-amber-700"
-                            }`}
-                          >
-                            {stockTotal(pieza)} unidades
-                          </p>
-                          <p className="text-xs text-carbon-500">
-                            en {pieza.existencias.length} bodega
-                            {pieza.existencias.length === 1 ? "" : "s"}
-                          </p>
+                          <div className="mt-3 flex justify-end">
+                            <BadgeStock
+                              unidades={stockTotal(pieza)}
+                            />
+                          </div>
                         </div>
                       </div>
                     </Link>

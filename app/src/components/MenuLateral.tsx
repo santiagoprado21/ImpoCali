@@ -279,22 +279,22 @@ export function BotonMenu({
       onClick={onClick}
       aria-label={abierto ? "Cerrar menú" : "Abrir menú"}
       aria-expanded={abierto}
-      className="grid h-10 w-10 shrink-0 place-items-center rounded-sm bg-marca-500 text-white transition hover:bg-marca-600"
+      className="grid h-10 w-10 shrink-0 place-items-center rounded-sm bg-lima-500 text-marca-900 transition hover:bg-lima-400"
     >
       <span className="sr-only">{abierto ? "Cerrar menú" : "Abrir menú"}</span>
       <span className="flex w-4 flex-col gap-1" aria-hidden>
         <span
-          className={`h-0.5 w-full rounded-full bg-white transition ${
+          className={`h-0.5 w-full rounded-full bg-marca-900 transition ${
             abierto ? "translate-y-1.5 rotate-45" : ""
           }`}
         />
         <span
-          className={`h-0.5 w-full rounded-full bg-white transition ${
+          className={`h-0.5 w-full rounded-full bg-marca-900 transition ${
             abierto ? "opacity-0" : ""
           }`}
         />
         <span
-          className={`h-0.5 w-full rounded-full bg-white transition ${
+          className={`h-0.5 w-full rounded-full bg-marca-900 transition ${
             abierto ? "-translate-y-1.5 -rotate-45" : ""
           }`}
         />

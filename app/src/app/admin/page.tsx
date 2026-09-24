@@ -206,10 +206,12 @@ export default function Tablero() {
                   {p.numero}
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block truncate text-sm font-medium text-carbon-900">
-                    {p.cliente}
+                  <span className="inline-flex max-w-full items-center gap-1.5 rounded-sm bg-lima-400/25 px-2 py-0.5">
+                    <span className="truncate text-sm font-bold text-carbon-900">
+                      {p.cliente}
+                    </span>
                   </span>
-                  <span className="block truncate text-xs text-carbon-500">
+                  <span className="mt-0.5 block truncate text-xs text-carbon-500">
                     {descripcionPedido(p)}
                   </span>
                 </span>

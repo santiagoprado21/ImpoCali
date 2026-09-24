@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { BadgeStock } from "@/components/BadgeStock";
 import { FotoPieza } from "@/components/FotoPieza";
 import { FotoVehiculo } from "@/components/FotoVehiculo";
 import { SelectorMarca } from "@/components/SelectorMarca";
@@ -18,10 +19,10 @@ import { formatoCOP } from "@/lib/pedidos";
 import { SEGMENTOS } from "@/lib/types";
 import type { Categoria, TipoVehiculo } from "@/lib/types";
 
-const TIPOS: TipoVehiculo[] = ["Motos", "Autos", "Carga y pasajeros"];
+const TIPOS: TipoVehiculo[] = ["Autos", "Carga y pasajeros"];
 
 export default function Catalogo() {
-  const [tipo, setTipo] = useState<TipoVehiculo>("Motos");
+  const [tipo, setTipo] = useState<TipoVehiculo>("Autos");
   const [marca, setMarca] = useState("");
   const [linea, setLinea] = useState("");
   const [anio, setAnio] = useState("");
@@ -126,7 +127,7 @@ export default function Catalogo() {
       <div className="grid gap-3 sm:grid-cols-3">
         <Paso
           numero={1}
-          titulo={tipo === "Motos" ? "Marca de la moto" : "Marca del vehículo"}
+          titulo="Marca del vehículo"
         >
           <SelectorMarca
             marcas={marcas}
@@ -334,14 +335,11 @@ export default function Catalogo() {
                                   <span className="block text-sm font-semibold text-marca-700">
                                     {formatoCOP(pieza.precioSocio)}
                                   </span>
-                                  <span
-                                    className={`block text-[11px] font-medium ${
-                                      stockTotal(pieza) > 20
-                                        ? "text-lima-600"
-                                        : "text-amber-700"
-                                    }`}
-                                  >
-                                    {stockTotal(pieza)} und
+                                  <span className="mt-1 inline-flex justify-end">
+                                    <BadgeStock
+                                      unidades={stockTotal(pieza)}
+                                      compacto
+                                    />
                                   </span>
                                 </span>
                               </Link>

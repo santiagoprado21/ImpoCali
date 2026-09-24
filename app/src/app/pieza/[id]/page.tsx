@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BadgeStock } from "@/components/BadgeStock";
 import { FotoPieza } from "@/components/FotoPieza";
 import { PanelPedido } from "@/components/PanelPedido";
 import { CATALOGO, piezaPorId, stockTotal } from "@/lib/catalogo";
@@ -56,8 +57,8 @@ export default async function FichaPieza({
                     {pieza.referencia}
                   </strong>
                 </p>
-                <div className="mt-4 flex flex-wrap gap-2">
-                  <Etiqueta texto={`${stockTotal(pieza)} unidades disponibles`} tono="lima" />
+                <div className="mt-4 flex flex-wrap items-center gap-3">
+                  <BadgeStock unidades={stockTotal(pieza)} />
                   <Etiqueta texto="Imagen y ficha del proveedor (PIES)" tono="marca" />
                   <Etiqueta texto="Aplicación certificada (ACES)" tono="marca" />
                 </div>

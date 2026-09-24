@@ -36,6 +36,11 @@ export function Encabezado() {
             etiqueta: "Pedidos",
             icono: "pedidos" as const,
           },
+          {
+            href: "/admin/informes",
+            etiqueta: "Informes",
+            icono: "tablero" as const,
+          },
         ] satisfies EnlaceMenu[],
         pie: [
           {

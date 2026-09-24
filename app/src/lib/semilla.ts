@@ -1,18 +1,8 @@
 import { CATALOGO } from "./catalogo";
+import { CLIENTES_DEMO } from "./clientes";
 import type { Bodega, CanalBusqueda, EstadoPedido, Pedido } from "./types";
 
-const CLIENTES: { nombre: string; ciudad: string }[] = [
-  { nombre: "Taller Mecánico Andrade", ciudad: "Cali" },
-  { nombre: "Serviteca El Progreso", ciudad: "Palmira" },
-  { nombre: "Almacén Repuestos La 14", ciudad: "Cali" },
-  { nombre: "Autoservicio Jiménez", ciudad: "Buga" },
-  { nombre: "Multifrenos del Valle", ciudad: "Yumbo" },
-  { nombre: "Taller Hermanos Rojas", ciudad: "Tuluá" },
-  { nombre: "Lubricantes y Filtros SAS", ciudad: "Cali" },
-  { nombre: "Motorepuestos Central", ciudad: "Pereira" },
-  { nombre: "Diésel Técnica del Pacífico", ciudad: "Buenaventura" },
-  { nombre: "Taller Automotriz Quintero", ciudad: "Popayán" },
-];
+const CLIENTES = CLIENTES_DEMO;
 
 export const ASESORES = [
   "Erika Vargas",

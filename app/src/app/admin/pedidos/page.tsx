@@ -83,10 +83,10 @@ export default function ListadoPedidos() {
                   </span>
                   <EtiquetaEstado estado={p.estado} />
                 </div>
-                <p className="mt-1.5 text-sm font-medium text-carbon-900">
+                <p className="mt-1.5 text-sm font-bold text-carbon-900">
                   {p.cliente}
                 </p>
-                <p className="text-xs text-carbon-500">{p.ciudad}</p>
+                <p className="text-xs font-medium text-lima-700">{p.ciudad}</p>
                 <p className="mt-1 line-clamp-2 text-xs text-carbon-700">
                   {descripcionPedido(p)}
                 </p>
@@ -135,11 +135,23 @@ export default function ListadoPedidos() {
                     </Link>
                   </td>
                   <td className="px-4 py-3">
-                    <span className="block text-xs font-medium text-carbon-900">
-                      {p.cliente}
-                    </span>
-                    <span className="block text-xs text-carbon-500">
-                      {p.ciudad}
+                    <span className="inline-flex items-center gap-1.5 rounded-sm bg-lima-400/25 px-2 py-1">
+                      <span className="grid h-6 w-6 place-items-center rounded-full bg-lima-500 text-[9px] font-bold text-white">
+                        {p.cliente
+                          .split(" ")
+                          .slice(0, 2)
+                          .map((w) => w[0])
+                          .join("")
+                          .toUpperCase()}
+                      </span>
+                      <span>
+                        <span className="block text-xs font-bold text-carbon-900">
+                          {p.cliente}
+                        </span>
+                        <span className="block text-[11px] text-lima-700">
+                          {p.ciudad}
+                        </span>
+                      </span>
                     </span>
                   </td>
                   <td className="max-w-[220px] px-4 py-3">
