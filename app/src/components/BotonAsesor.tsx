@@ -108,8 +108,8 @@ export function BotonAsesor() {
               aria-label="Asesor virtual"
               className="entrar absolute bottom-[calc(100%+10px)] left-0 w-[min(16rem,calc(100vw-2.5rem))]"
             >
-              <div className="relative rounded-2xl rounded-bl-md bg-lima-500 px-4 py-3 text-marca-900 shadow-lg">
-                <p className="pr-5 text-sm font-semibold leading-snug">
+              <div className="relative rounded-2xl rounded-bl-md bg-marca-500 px-4 py-3 text-white shadow-lg">
+                <p className="pr-5 text-sm font-medium leading-snug">
                   Comunícate con un asesor virtual
                 </p>
                 <button
@@ -118,7 +118,7 @@ export function BotonAsesor() {
                     setGlobo(false);
                     setChat(true);
                   }}
-                  className="mt-2.5 inline-flex rounded-full bg-marca-700 px-3 py-1 text-[11px] font-semibold text-white transition hover:bg-marca-800"
+                  className="mt-2.5 inline-flex rounded-full bg-white px-3 py-1 text-[11px] font-semibold text-marca-700 transition hover:bg-marca-50"
                 >
                   Abrir chat
                 </button>
@@ -126,13 +126,13 @@ export function BotonAsesor() {
                   type="button"
                   aria-label="Cerrar mensaje"
                   onClick={() => setGlobo(false)}
-                  className="absolute right-1.5 top-1.5 grid h-6 w-6 place-items-center rounded-full text-marca-900/70 transition hover:bg-black/10"
+                  className="absolute right-1.5 top-1.5 grid h-6 w-6 place-items-center rounded-full text-white/80 transition hover:bg-white/15"
                 >
                   ×
                 </button>
                 <span
                   aria-hidden
-                  className="absolute -bottom-2 left-5 h-0 w-0 border-l-[8px] border-r-[8px] border-t-[10px] border-l-transparent border-r-transparent border-t-lima-500"
+                  className="absolute -bottom-2 left-5 h-0 w-0 border-l-[8px] border-r-[8px] border-t-[10px] border-l-transparent border-r-transparent border-t-marca-500"
                 />
               </div>
             </div>
@@ -150,7 +150,7 @@ export function BotonAsesor() {
             }}
             aria-label={chat ? "Cerrar asesor virtual" : "Abrir asesor virtual"}
             aria-expanded={chat}
-            className="grid h-14 w-14 place-items-center rounded-full bg-lima-500 text-marca-900 shadow-lg transition hover:bg-lima-400"
+            className="grid h-14 w-14 place-items-center rounded-full bg-marca-500 text-white shadow-lg transition hover:bg-marca-600"
           >
             <svg
               viewBox="0 0 48 48"
