@@ -1,10 +1,13 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { buscarPorDescripcion } from "@/lib/buscador";
 import { stockTotal } from "@/lib/catalogo";
 import { formatoCOP } from "@/lib/pedidos";
 import type { Pieza } from "@/lib/types";
+
+const AVATAR = "/marca/asesor-virtual.jpg";
 
 type ArchivoCotizacion = {
   nombre: string;
@@ -105,12 +108,21 @@ export function ChatAsesor({ onCerrar }: { onCerrar: () => void }) {
       className="entrar fixed bottom-24 left-5 z-50 flex h-[min(28rem,65vh)] w-[min(20rem,calc(100vw-2.5rem))] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-marca-100"
     >
       <header className="flex items-center gap-3 bg-marca-500 px-4 py-3 text-white">
-        <span className="grid h-9 w-9 place-items-center rounded-full bg-white/15 text-sm font-bold">
-          AV
+        <span className="relative h-10 w-10 shrink-0 overflow-hidden rounded-full border-2 border-lima-400 bg-white">
+          <Image
+            src={AVATAR}
+            alt="Asesor virtual"
+            fill
+            sizes="40px"
+            className="object-cover object-top"
+          />
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-sm font-semibold leading-tight">Asesor virtual</p>
-          <p className="text-[11px] text-white/80">En línea</p>
+          <p className="flex items-center gap-1.5 text-[11px] text-white/80">
+            <span className="h-1.5 w-1.5 rounded-full bg-lima-400" />
+            En línea
+          </p>
         </div>
         <button
           type="button"

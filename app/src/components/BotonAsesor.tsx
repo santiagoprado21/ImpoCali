@@ -1,9 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { ChatAsesor } from "@/components/ChatAsesor";
 
 const CLAVE_POPUP = "autofix.popup-asesor-visto";
+const AVATAR = "/marca/asesor-virtual.jpg";
 
 /**
  * Botón flotante de asesor + popup de atención al iniciar la página.
@@ -52,15 +54,27 @@ export function BotonAsesor() {
             className="entrar relative w-full max-w-md overflow-hidden rounded-2xl border-2 border-lima-500 bg-white shadow-2xl"
           >
             <div className="border-b-4 border-lima-500 bg-marca-500 px-6 py-5 text-white">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-lima-400">
-                Autofix · Atención inmediata
-              </p>
-              <h2
-                id="popup-asesor-titulo"
-                className="mt-1 text-2xl font-bold leading-tight"
-              >
-                ¿Necesitas ayuda para encontrar un repuesto?
-              </h2>
+              <div className="flex items-start gap-3 pr-6">
+                <Image
+                  src={AVATAR}
+                  alt="Asesor virtual Impocali"
+                  width={64}
+                  height={64}
+                  className="h-14 w-14 shrink-0 rounded-full border-2 border-lima-400 object-cover object-top"
+                  priority
+                />
+                <div>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-lima-400">
+                    Autofix · Atención inmediata
+                  </p>
+                  <h2
+                    id="popup-asesor-titulo"
+                    className="mt-1 text-xl font-bold leading-tight sm:text-2xl"
+                  >
+                    ¿Necesitas ayuda para encontrar un repuesto?
+                  </h2>
+                </div>
+              </div>
             </div>
             <div className="px-6 py-5">
               <p className="text-sm leading-relaxed text-carbon-700">
@@ -150,44 +164,17 @@ export function BotonAsesor() {
             }}
             aria-label={chat ? "Cerrar asesor virtual" : "Abrir asesor virtual"}
             aria-expanded={chat}
-            className="grid h-14 w-14 place-items-center rounded-full bg-marca-500 text-white shadow-lg transition hover:bg-marca-600"
+            className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-white bg-marca-500 shadow-lg transition hover:scale-105"
           >
-            <svg
-              viewBox="0 0 48 48"
-              className="h-8 w-8"
-              fill="none"
-              aria-hidden
-            >
-              <circle cx="24" cy="16" r="7" fill="currentColor" opacity="0.95" />
-              <path
-                d="M10 40c1.5-8 7-12 14-12s12.5 4 14 12"
-                stroke="currentColor"
-                strokeWidth="3.2"
-                strokeLinecap="round"
-                fill="none"
-              />
-              <path
-                d="M9 22v6c0 2 1.5 3.5 3.5 3.5H14"
-                stroke="currentColor"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M39 22v6c0 2-1.5 3.5-3.5 3.5H34"
-                stroke="currentColor"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-              <path
-                d="M9 22c0-8.3 6.7-15 15-15"
-                stroke="currentColor"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-                opacity="0.85"
-              />
-            </svg>
+            <Image
+              src={AVATAR}
+              alt="Asesor virtual Impocali"
+              fill
+              sizes="56px"
+              className="object-cover object-top"
+              priority
+            />
+            <span className="absolute bottom-0.5 right-0.5 h-3 w-3 rounded-full border-2 border-white bg-lima-500" />
           </button>
         </div>
       </div>
