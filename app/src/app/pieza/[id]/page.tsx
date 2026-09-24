@@ -21,7 +21,7 @@ export default async function FichaPieza({
     <div>
       <nav aria-label="Ruta de navegación" className="text-xs text-carbon-500">
         <Link href="/" className="font-medium text-marca-600 hover:text-marca-700">
-          Buscador
+          Inicio
         </Link>
         <span className="px-1.5">·</span>
         <Link

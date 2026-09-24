@@ -74,11 +74,11 @@ export function Buscador() {
   const modoActivo = MODOS.find((m) => m.id === modo)!;
 
   return (
-    <section>
-      <div className="rounded-md border border-marca-100 bg-white p-6 shadow-sm">
-        <h1 className="text-2xl font-semibold text-carbon-900">
+    <section id="buscador">
+      <div className="border border-marca-100 bg-white p-6 shadow-sm">
+        <h2 className="text-xl font-semibold text-carbon-900 sm:text-2xl">
           ¿Qué repuesto necesita hoy?
-        </h1>
+        </h2>
         <p className="mt-1 text-sm text-carbon-500">
           Un solo buscador sobre el catálogo unificado de Impocali. Devuelve la
           referencia, el stock real por bodega y el precio de socio comercial.
@@ -260,41 +260,6 @@ export function Buscador() {
           )}
         </div>
       )}
-
-      {!resultados && !analizando && <SugerenciasIniciales />}
     </section>
-  );
-}
-
-function SugerenciasIniciales() {
-  const bloques = [
-    {
-      titulo: "Identifica la pieza",
-      texto:
-        "Interpreta lenguaje de mostrador (“corchos de clutch”, “balineras”) y lo traduce a la referencia del catálogo.",
-    },
-    {
-      titulo: "Muestra stock y precio",
-      texto:
-        "Consulta inventario y tiempos de entrega del proveedor por API, sin llamadas ni esperas.",
-    },
-    {
-      titulo: "Permite pedir de inmediato",
-      texto:
-        "El pedido se genera desde la misma ficha, ya con referencia validada y trazabilidad.",
-    },
-  ];
-  return (
-    <div className="mt-6 grid gap-4 sm:grid-cols-3">
-      {bloques.map((b) => (
-        <div
-          key={b.titulo}
-          className="rounded-md border border-marca-100 bg-white p-5 shadow-sm"
-        >
-          <h3 className="text-sm font-semibold text-marca-700">{b.titulo}</h3>
-          <p className="mt-2 text-xs leading-relaxed text-carbon-500">{b.texto}</p>
-        </div>
-      ))}
-    </div>
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Bebas_Neue, Raleway } from "next/font/google";
-import { BotonWhatsApp } from "@/components/BotonWhatsApp";
+import { BotonAsesor } from "@/components/BotonAsesor";
+import { BotonCarrito } from "@/components/BotonCarrito";
 import { Encabezado } from "@/components/Encabezado";
 import { ProveedorSesion } from "@/lib/sesion";
 import { ProveedorTienda } from "@/lib/tienda";
@@ -41,7 +42,8 @@ export default function RootLayout({
                 Impocali · Catálogo y pedidos simulados con estructura ACES/PIES.
               </div>
             </footer>
-            <BotonWhatsApp />
+            <BotonAsesor />
+            <BotonCarrito />
           </ProveedorTienda>
         </ProveedorSesion>
       </body>

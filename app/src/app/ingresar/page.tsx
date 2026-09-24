@@ -44,17 +44,17 @@ export default function Ingresar() {
     <div className="grid gap-8 lg:grid-cols-[1fr_380px] lg:items-start">
       <section className="panel">
         <h1 className="panel-cabecera">Consola interna · Ingreso de personal</h1>
-        <div className="p-8">
-          <p className="text-sm text-carbon-500">
-            Acceso restringido al equipo de Impocali. Los socios comerciales usan
-            el{" "}
+        <div className="flex flex-col items-center p-8 text-center">
+          <p className="max-w-md text-sm text-carbon-500">
+            Ingrese con una cuenta de demostración. Para volver a la vista de
+            cliente use{" "}
             <Link href="/" className="font-medium text-marca-600 hover:underline">
-              buscador público
-            </Link>
-            .
+              Ir a la tienda
+            </Link>{" "}
+            o cierre sesión cuando esté dentro.
           </p>
 
-          <form onSubmit={enviar} className="mt-6 max-w-md space-y-4">
+          <form onSubmit={enviar} className="mt-6 w-full max-w-md space-y-4 text-left">
             <div>
               <label
                 htmlFor="correo"
