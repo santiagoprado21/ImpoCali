@@ -32,8 +32,8 @@ export function HeroInicio() {
           Repuestos multimarca, al instante
         </h1>
         <p className="entrar mt-4 max-w-md text-sm leading-relaxed text-white/85 sm:text-base [animation-delay:140ms]">
-          Encuentra la referencia correcta, el stock por bodega y el precio de
-          socio comercial en un solo buscador.
+          Buscador con IA: interpreta lenguaje de taller, encuentra la
+          referencia, el stock y el precio de socio en segundos.
         </p>
         <div className="entrar mt-7 flex flex-wrap gap-3 [animation-delay:200ms]">
           <a
