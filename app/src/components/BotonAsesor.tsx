@@ -49,10 +49,10 @@ export function BotonAsesor() {
             role="dialog"
             aria-modal="true"
             aria-labelledby="popup-asesor-titulo"
-            className="entrar relative w-full max-w-md overflow-hidden rounded-2xl bg-white shadow-2xl"
+            className="entrar relative w-full max-w-md overflow-hidden rounded-2xl border-2 border-lima-500 bg-white shadow-2xl"
           >
-            <div className="bg-gradient-to-r from-marca-500 to-lima-600 px-6 py-5 text-white">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-white/80">
+            <div className="border-b-4 border-lima-500 bg-marca-500 px-6 py-5 text-white">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-lima-400">
                 Autofix · Atención inmediata
               </p>
               <h2
@@ -90,7 +90,7 @@ export function BotonAsesor() {
               type="button"
               aria-label="Cerrar"
               onClick={() => cerrarPopup(false)}
-              className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full bg-white/20 text-lg text-white transition hover:bg-white/30"
+              className="absolute right-3 top-3 grid h-8 w-8 place-items-center rounded-full bg-white/15 text-lg text-white transition hover:bg-white/25"
             >
               ×
             </button>
